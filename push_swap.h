@@ -6,7 +6,7 @@
 /*   By: ebelkhei <ebelkhei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:29:30 by ebelkhei          #+#    #+#             */
-/*   Updated: 2023/01/09 14:43:25 by ebelkhei         ###   ########.fr       */
+/*   Updated: 2023/01/10 11:31:27 by ebelkhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,12 @@ size_t	ft_strlen(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strdup(const char *ptr);
 int		check_and_push(char *arg1, t_list  **stack_a);
-void    sa(t_list **stack);
-void	push(t_list **stack1, t_list **stack2);
+void    swap(t_list **stack, int a);
+void	push(t_list **stack1, t_list **stack2, int a);
 void	print_list(t_list *stack_a);
 void	ss(t_list **stack1, t_list **stack2);
-void	reverse(t_list **stack);
-void	rotate(t_list **stack);
+void	rotate(t_list **stack, int a);
+void	rev_rotate(t_list **stack, int a);
+void	algo(t_list **stack_a, t_list **stack_b);
 
 #endif

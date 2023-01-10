@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebelkhei <ebelkhei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/09 14:41:17 by ebelkhei          #+#    #+#             */
-/*   Updated: 2023/01/09 14:56:09 by ebelkhei         ###   ########.fr       */
+/*   Created: 2023/01/09 16:43:15 by ebelkhei          #+#    #+#             */
+/*   Updated: 2023/01/10 11:01:11 by ebelkhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
-t_list	*ft_beforelast(t_list *stack)
-{
-	while (stack->next->next)
-		stack = stack->next;
-	return (stack);
-}
-
-void	rotate(t_list **stack)
-{
-	t_list *tmp;
-	t_list *tmp2;
-
-	tmp = ft_lstlast(*stack);
-	tmp2 = ft_beforelast(*stack);
-	tmp2->next = NULL;
-	ft_lstadd_front(stack, tmp);
-}
+// void algo(t_list **stack_a, t_list **stack_b)
+// {
+//     while (ft_lstsize(*stack_a) != 1)
+//     {
+//         if ((*stack_a)->content > (*stack_a)->next->content)
+//             sa(stack_a);
+//         else
+//             push(stack_a, stack_b);
+//     }
+//     while (ft_lstsize(*stack_b))
+//     {
+//         push(stack_b, stack_a);
+//         sa(stack_a);
+//     }
+// }

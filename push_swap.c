@@ -6,7 +6,7 @@
 /*   By: ebelkhei <ebelkhei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:25:39 by ebelkhei          #+#    #+#             */
-/*   Updated: 2023/01/09 14:43:44 by ebelkhei         ###   ########.fr       */
+/*   Updated: 2023/01/10 11:38:45 by ebelkhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,4 @@ int main(int argc, char *argv[])
     	if (!check_and_push(argv[i + 1], &stack_a))
         	return (ft_error());
 	}
-	print_list(stack_a);
-	printf("---------\n");
-	rotate(&stack_a);
-	print_list(stack_a);
 }

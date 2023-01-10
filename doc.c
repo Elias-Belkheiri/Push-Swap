@@ -94,3 +94,26 @@ while (argv[++i + 1])
         return (ft_error);
 }
 */
+// while (ft_lstsize() != 1)
+//  if (top of a > top of a - 1)
+//          swap
+//  else
+//          push
+//
+// while (ft_lstsize())
+// push_to_a
+// sa
+
+
+A :
+0
+2
+3
+5
+7
+
+B :
+5
+2
+3
+0
