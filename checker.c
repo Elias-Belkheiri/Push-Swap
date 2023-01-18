@@ -6,7 +6,7 @@
 /*   By: ebelkhei <ebelkhei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 14:48:00 by ebelkhei          #+#    #+#             */
-/*   Updated: 2023/01/17 14:56:52 by ebelkhei         ###   ########.fr       */
+/*   Updated: 2023/01/18 14:51:02 by ebelkhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,11 +118,11 @@ int main(int argc, char *argv[])
         	return (ft_error());
 	}
 	instructions = read_from_si();
+	print_list(stack_a);
 	if (!check_and_execute_instructions(instructions, &stack_a, &stack_b))
 	{
 		write(2, "Error\n", 6);
 		exit (1);
 	}
 	check_stacks(stack_a, stack_b);
-	system("leaks checker");
 }

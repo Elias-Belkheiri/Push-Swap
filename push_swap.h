@@ -6,7 +6,7 @@
 /*   By: ebelkhei <ebelkhei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:29:30 by ebelkhei          #+#    #+#             */
-/*   Updated: 2023/01/17 14:27:30 by ebelkhei         ###   ########.fr       */
+/*   Updated: 2023/01/18 13:34:37 by ebelkhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,11 @@ typedef struct s_list
 	int				content;
 	struct s_list	*next;
 }	t_list;
+typedef struct s_min_idx
+{
+	int	num;
+	int	idx;
+}	t_min;
 char		*get_next_line(int fd);
 size_t		ft_strlen(const char *s);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);

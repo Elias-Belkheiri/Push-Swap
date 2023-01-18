@@ -6,7 +6,7 @@
 /*   By: ebelkhei <ebelkhei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 11:25:11 by ebelkhei          #+#    #+#             */
-/*   Updated: 2023/01/17 14:27:51 by ebelkhei         ###   ########.fr       */
+/*   Updated: 2023/01/18 14:40:56 by ebelkhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,14 @@ void	push(t_list **stack1, t_list **stack2, int a)
 	tmp = (*stack1)->next;
 	ft_lstadd_front(stack2, *stack1);
 	*stack1 = tmp;
+	if (!ft_lstsize(*stack1))
+		*stack1 = NULL;
 	if (a == 3)
 		return ;
 	if (!a)
-		write(1, "pb\n", 3);
-	else
 		write(1, "pa\n", 3);
+	else
+		write(1, "pb\n", 3);
 }
 
 t_list	*ft_beforelast(t_list *stack)
