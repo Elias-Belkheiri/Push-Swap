@@ -6,17 +6,11 @@
 /*   By: ebelkhei <ebelkhei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:25:39 by ebelkhei          #+#    #+#             */
-/*   Updated: 2023/01/10 11:38:45 by ebelkhei         ###   ########.fr       */
+/*   Updated: 2023/01/17 11:50:42 by ebelkhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int ft_error()
-{
-	write(2, "ERROR\n", 6);
-	return (1);
-}
 
 int main(int argc, char *argv[])
 {
@@ -26,7 +20,8 @@ int main(int argc, char *argv[])
 
 	if (argc < 2 || !argv)
 		exit (0);
-	stack_a = stack_b = NULL;
+	stack_a = NULL;
+	stack_b = NULL;
 	i = -1;
 	while (argv[++i + 1])
 	{
@@ -35,4 +30,13 @@ int main(int argc, char *argv[])
     	if (!check_and_push(argv[i + 1], &stack_a))
         	return (ft_error());
 	}
+	if (is_sorted(stack_a))
+		exit(EXIT_SUCCESS);
+	algo2(&stack_a, &stack_b);
+	// algo1(&stack_a, 0);
+	// algo3(&stack_a, &stack_b);
+	// printf("------------\n");
+	// print_list(stack_a);
+	// if (is_sorted(stack_a))
+	// 	printf("ok\n");
 }
