@@ -123,4 +123,14 @@ void    algo3(t_list **stack_a, t_list **stack_b)
         min += 12;
     }
 }
+
+getMinMax(stack, NULL, firstMax);
+secondMax(stack, secondMax, firstMax);
+if (mouvments_num(firstMax.idx, size) < mouvments_num(secondMax.idx, size))
+	push(firstMax);
+else
+	push(secondMax);
+	push(firstMax);
+	swap(stack_a);
+
 */

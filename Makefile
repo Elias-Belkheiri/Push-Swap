@@ -16,7 +16,7 @@ bonus				:  ${BONUS_SRCS}
 						${CC} ${CFLAGS} ${BONUS_SRCS} -o ${bonus_name}
 
 ${NAME}				:  ${SRCS}
-						${CC} ${CFLAGS} ${SRCS} -o ${NAME}
+						${CC} -g ${CFLAGS} ${SRCS} -o ${NAME}
 
 clean				:
 						rm -f ${NAME}

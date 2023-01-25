@@ -6,7 +6,7 @@
 /*   By: ebelkhei <ebelkhei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:25:39 by ebelkhei          #+#    #+#             */
-/*   Updated: 2023/01/18 14:44:52 by ebelkhei         ###   ########.fr       */
+/*   Updated: 2023/01/23 22:14:34 by ebelkhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,12 @@ int main(int argc, char *argv[])
 	}
 	if (is_sorted(stack_a))
 		exit(EXIT_SUCCESS);
-	algo3(&stack_a, &stack_b);
+	if (ft_lstsize(stack_a) <= 3)
+		algo1(&stack_a, 0);
+	else if (ft_lstsize(stack_a) <= 5)
+		algo2(&stack_a, &stack_b);
+	else
+		algo3(&stack_a, &stack_b);
 	// algo1(&stack_a, 0);
 	// algo3(&stack_a, &stack_b);
 	// printf("------------\n");

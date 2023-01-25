@@ -6,7 +6,7 @@
 /*   By: ebelkhei <ebelkhei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 16:43:15 by ebelkhei          #+#    #+#             */
-/*   Updated: 2023/01/18 13:25:20 by ebelkhei         ###   ########.fr       */
+/*   Updated: 2023/01/21 10:35:49 by ebelkhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ void	find_min(t_list *stack, t_min *min)
 {
 	int	i;
 
+	if (!stack)
+		return ;
 	min->num = stack->content;
 	i = 0;
 	while (stack)

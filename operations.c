@@ -6,7 +6,7 @@
 /*   By: ebelkhei <ebelkhei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 11:25:11 by ebelkhei          #+#    #+#             */
-/*   Updated: 2023/01/18 14:40:56 by ebelkhei         ###   ########.fr       */
+/*   Updated: 2023/01/21 12:51:50 by ebelkhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void    swap(t_list **stack, int a)
 {
 	int	tmp;
 
-	if (!*stack)
+	if (!*stack || !(*stack)->next)
 		return ;
 	if ((*stack)->content < (*stack)->next->content ||
 	!*stack)

@@ -6,7 +6,7 @@
 /*   By: ebelkhei <ebelkhei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:29:30 by ebelkhei          #+#    #+#             */
-/*   Updated: 2023/01/18 13:34:37 by ebelkhei         ###   ########.fr       */
+/*   Updated: 2023/01/24 10:37:33 by ebelkhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,10 @@ void		algo2(t_list **stack_a, t_list **stack_b);
 void		algo3(t_list **stack_a, t_list **stack_b);
 void		rr(t_list **stack1, t_list **stack2, int a);
 void		rrr(t_list **stack1, t_list **stack2, int a);
+void		find_min(t_list *stack, t_min *min);
+int			mouvments_num(int idx, int size);
+void		get_max(t_list *stack, t_min *max1, t_min *max2);
+void		push_to_a(t_list **stack_b, t_list **stack_a, t_min *number);
+void		getSecondMax(t_list *stack, t_min *secondMax, t_min *number2);
 
 #endif

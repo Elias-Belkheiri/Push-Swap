@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algo2.c                                            :+:      :+:    :+:   */
+/*   save.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebelkhei <ebelkhei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:25:16 by ebelkhei          #+#    #+#             */
-/*   Updated: 2023/01/24 11:06:22 by ebelkhei         ###   ########.fr       */
+/*   Updated: 2023/01/23 14:56:25 by ebelkhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,35 +132,34 @@ int    check_range(t_list **stack_a, t_list **stack_b, int min, int a)
 
 void	reset_b(t_list **stack_a, t_list **stack_b)
 {
-	t_min	max1;
-	t_min	max2;
+	t_min	firstMax;
+	t_min	secondMax;
 	int		size;
 
 	size = ft_lstsize(*stack_b);
-	if (size == 1)
+	firstMax.idx = getMinMax(*stack_b, NULL, &firstMax.num);
+	if (ft_lstsize(*stack_b) == 1)
 	{
 		push(stack_b, stack_a, 0);
-		return;
+		return ;
 	}
-	get_max(*stack_b, &max1, &max2);
-	getSecondMax(*stack_b, &max2, &max1);
-	if (mouvments_num(max1.idx, size) < mouvments_num(max2.idx, size))
-		push_to_a(stack_b, stack_a, &max1);
+	getSecondMax(*stack_b, &secondMax, firstMax.num);
+	if (mouvments_num(firstMax.idx, size) < mouvments_num(secondMax.idx, size))
+		push_to_a(stack_b, stack_a, &firstMax, size);
 	else
 	{
-		push_to_a(stack_b, stack_a, &max2);
-		get_max(*stack_b, &max1, &max2);
-		push_to_a(stack_b, stack_a, &max1);
+		push_to_a(stack_b, stack_a, &secondMax, size);
+		push_to_a(stack_b, stack_a, &firstMax, size);
 		swap(stack_a, 0);
 	}
-	// if (max1.idx < size / 2)
+	// if (firstMax.idx < size / 2)
 	// {
-	// 	while ((*stack_b)->content != max1.num)
+	// 	while ((*stack_b)->content != firstMax.num)
 	// 		rotate(stack_b, 1);
 	// }
 	// else
 	// {
-	// 	while ((*stack_b)->content != max1.num)
+	// 	while ((*stack_b)->content != firstMax.num)
 	// 		rev_rotate(stack_b, 1);
 	// }
 	// push(stack_b, stack_a, 0);
@@ -174,10 +173,7 @@ void    algo3(t_list **stack_a, t_list **stack_b)
 	int	a;
 
     getMinMax(*stack_a, &min, &max);
-	if (ft_lstsize(*stack_a) <= 250)
-		a = (max - min) / 5;
-	else
-		a = (max - min) / 11;
+	a = (max - min) / 4;
     while (ft_lstsize(*stack_a))
     {
         p = check_range(stack_a, stack_b, min, a);
@@ -186,5 +182,9 @@ void    algo3(t_list **stack_a, t_list **stack_b)
         min += a;
     }
 	while (ft_lstsize(*stack_b))
+	{
+		printf("---------\n");
+		print_list(*stack_b);
 		reset_b(stack_a, stack_b);
+	}
 }
