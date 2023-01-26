@@ -6,7 +6,7 @@
 /*   By: ebelkhei <ebelkhei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 12:04:15 by ebelkhei          #+#    #+#             */
-/*   Updated: 2023/01/09 10:23:51 by ebelkhei         ###   ########.fr       */
+/*   Updated: 2023/01/26 15:34:42 by ebelkhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,4 @@ void	print_list(t_list *stack_a)
 		printf("%d\n", stack_a->content);
 		stack_a = stack_a->next;
 	}
-}
-
-t_list	*ft_lstlast(t_list *lst)
-{
-	if (!lst)
-		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
 }

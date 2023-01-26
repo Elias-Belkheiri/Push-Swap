@@ -6,53 +6,11 @@
 /*   By: ebelkhei <ebelkhei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 12:05:49 by ebelkhei          #+#    #+#             */
-/*   Updated: 2023/01/09 14:39:54 by ebelkhei         ###   ########.fr       */
+/*   Updated: 2023/01/26 15:34:45 by ebelkhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-// static t_list	*ft_cpy(t_list *lst, t_list *head, void *(*f)(int))
-// {
-// 	t_list	*nw_lst;
-// 	t_list	*ptr;
-
-// 	ptr = lst;
-// 	while (ptr)
-// 	{
-// 		if (!head)
-// 		{
-// 			head = ft_lstnew(f(ptr->content));
-// 			if (!head)
-// 				return (NULL);
-// 			nw_lst = head;
-// 		}
-// 		else
-// 		{
-// 			nw_lst->next = ft_lstnew(f(ptr->content));
-// 			if (!nw_lst->next)
-// 				return (NULL);
-// 			nw_lst = nw_lst->next;
-// 		}
-// 		ptr = ptr->next;
-// 	}
-// 	return (head);
-// }
-
-// t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(int))
-// {
-// 	t_list	*head;
-
-// 	head = NULL;
-// 	if (lst && f && del)
-// 	{
-// 		head = ft_cpy(lst, head, f);
-// 		if (!head)
-// 			ft_lstclear(&head, del);
-// 		return (head);
-// 	}
-// 	return (NULL);
-// }
 
 t_list	*ft_lstnew(int content)
 {
@@ -95,4 +53,13 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	while (prv->next)
 		prv = prv->next;
 	prv->next = new;
+}
+
+t_list	*ft_lstlast(t_list *lst)
+{
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }

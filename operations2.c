@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_all_mfs.c                                  :+:      :+:    :+:   */
+/*   operations2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebelkhei <ebelkhei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/07 11:09:26 by ebelkhei          #+#    #+#             */
-/*   Updated: 2023/01/26 15:42:48 by ebelkhei         ###   ########.fr       */
+/*   Created: 2023/01/25 13:27:37 by ebelkhei          #+#    #+#             */
+/*   Updated: 2023/01/25 14:22:53 by ebelkhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
-void	ft_free_all_mfs(char **str)
+void	ss(t_list **stack1, t_list **stack2, int a)
 {
-	int	i;
-
-	i = 0;
-	if (str)
-	{
-		while (str[i])
-			free(str[i++]);
-		free(str);
-	}
+	swap(stack1, a);
+	swap(stack2, a);
 }
 
-int	ft_clear(char **arg, t_list **stack_a)
+void	rr(t_list **stack1, t_list **stack2, int a)
 {
-	ft_lstclear(stack_a);
-	ft_free_all_mfs(arg);
-	return (0);
+	rotate(stack1, a);
+	rotate(stack2, a);
+}
+
+void	rrr(t_list **stack1, t_list **stack2, int a)
+{
+	rev_rotate(stack1, a);
+	rev_rotate(stack2, a);
 }

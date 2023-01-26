@@ -6,7 +6,7 @@
 /*   By: ebelkhei <ebelkhei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 11:25:11 by ebelkhei          #+#    #+#             */
-/*   Updated: 2023/01/21 12:51:50 by ebelkhei         ###   ########.fr       */
+/*   Updated: 2023/01/25 13:29:40 by ebelkhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	push(t_list **stack1, t_list **stack2, int a)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	if (!*stack1)
 		return ;
@@ -40,8 +40,8 @@ t_list	*ft_beforelast(t_list *stack)
 
 void	rev_rotate(t_list **stack, int a)
 {
-	t_list *tmp;
-	t_list *tmp2;
+	t_list	*tmp;
+	t_list	*tmp2;
 
 	if (!*stack)
 		return ;
@@ -59,8 +59,7 @@ void	rev_rotate(t_list **stack, int a)
 
 void	rotate(t_list **stack, int a)
 {
-	t_list *tmp;
-
+	t_list	*tmp;
 
 	if (!*stack)
 		return ;
@@ -75,14 +74,14 @@ void	rotate(t_list **stack, int a)
 		write(1, "rb\n", 3);
 }
 
-void    swap(t_list **stack, int a)
+void	swap(t_list **stack, int a)
 {
 	int	tmp;
 
 	if (!*stack || !(*stack)->next)
 		return ;
-	if ((*stack)->content < (*stack)->next->content ||
-	!*stack)
+	if ((*stack)->content < (*stack)->next->content
+		|| !*stack)
 		return ;
 	tmp = (*stack)->content;
 	(*stack)->content = (*stack)->next->content;
@@ -93,22 +92,4 @@ void    swap(t_list **stack, int a)
 		write (1, "sa\n", 3);
 	else
 		write (1, "sb\n", 3);
-}
-
-void	ss(t_list **stack1, t_list **stack2, int a)
-{
-	swap(stack1, a);
-	swap(stack2, a);
-}
-
-void	rr(t_list **stack1, t_list **stack2, int a)
-{
-	rotate(stack1, a);
-	rotate(stack2, a);
-}
-
-void	rrr(t_list **stack1, t_list **stack2, int a)
-{
-	rev_rotate(stack1, a);
-	rev_rotate(stack2, a);
 }

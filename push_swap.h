@@ -6,7 +6,7 @@
 /*   By: ebelkhei <ebelkhei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:29:30 by ebelkhei          #+#    #+#             */
-/*   Updated: 2023/01/24 10:37:33 by ebelkhei         ###   ########.fr       */
+/*   Updated: 2023/01/26 15:43:02 by ebelkhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,23 +47,25 @@ t_list		*ft_lstlast(t_list *lst);
 void		ft_lstadd_back(t_list **lst, t_list *new);
 void		ft_lstdelone(t_list *lst);
 void		ft_lstclear(t_list **lst);
-void		ft_lstiter(t_list *lst, void (*f)(void *));
-// t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(int));
 void		ft_free_all_mfs(char **str);
+int			ft_clear(char **arg, t_list **stack_a);
 char		**ft_split(char const *s, char c);
 int			ft_strlcpy(char *dst, const char *src, int dstsize);
 size_t		ft_strlen(const char *s);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strdup(const char *ptr);
-int			check_and_push(char *arg1, t_list  **stack_a);
-void    	swap(t_list **stack, int a);
+int			check_and_push(char *arg1, t_list **stack_a);
+void		swap(t_list **stack, int a);
 void		push(t_list **stack1, t_list **stack2, int a);
 void		print_list(t_list *stack_a);
 void		ss(t_list **stack1, t_list **stack2, int a);
 void		rotate(t_list **stack, int a);
 void		rev_rotate(t_list **stack, int a);
-void		algo(t_list **stack_a, t_list **stack_b);
-int			ft_error();
+int			check_range(t_list **stack_a, t_list **stack_b, int min, int a);
+int			check_push(t_list **stack_a, t_list **stack_b,
+				t_min *firstMin, t_min *secondMin);
+void		check_idx_push(t_list **stack_a, t_list **stack_b, t_min *number);
+int			ft_error(void);
 int			is_sorted(t_list *stack);
 void		algo1(t_list **stack_a, int a);
 void		algo2(t_list **stack_a, t_list **stack_b);
@@ -72,8 +74,8 @@ void		rr(t_list **stack1, t_list **stack2, int a);
 void		rrr(t_list **stack1, t_list **stack2, int a);
 void		find_min(t_list *stack, t_min *min);
 int			mouvments_num(int idx, int size);
-void		get_max(t_list *stack, t_min *max1, t_min *max2);
 void		push_to_a(t_list **stack_b, t_list **stack_a, t_min *number);
-void		getSecondMax(t_list *stack, t_min *secondMax, t_min *number2);
+int			get_min_max(t_list *stack, int *min, int *max);
+void		push_to_a_2(t_list **stack_a, t_list **stack_b, int *count, int n);
 
 #endif
