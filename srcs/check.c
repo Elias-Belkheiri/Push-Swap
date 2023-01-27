@@ -6,7 +6,7 @@
 /*   By: ebelkhei <ebelkhei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 14:23:20 by ebelkhei          #+#    #+#             */
-/*   Updated: 2023/01/26 15:42:28 by ebelkhei         ###   ########.fr       */
+/*   Updated: 2023/01/26 16:21:32 by ebelkhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int	check_and_push(char *arg1, t_list **stack_a)
 
 	i = -1;
 	arg = ft_split(arg1, ' ');
-	if (!arg || !*arg)
+	if (!arg || !*arg || !ft_strlen(arg1))
 		return (0);
 	while (arg[++i])
 	{

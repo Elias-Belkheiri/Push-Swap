@@ -6,17 +6,11 @@
 /*   By: ebelkhei <ebelkhei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:25:39 by ebelkhei          #+#    #+#             */
-/*   Updated: 2023/01/26 16:06:02 by ebelkhei         ###   ########.fr       */
+/*   Updated: 2023/01/27 12:23:49 by ebelkhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	ft_error(void)
-{
-	write(2, "ERROR\n", 6);
-	exit (1);
-}
 
 void	algos(t_list **stack_a, t_list **stack_b)
 {
@@ -41,12 +35,12 @@ int	main(int argc, char *argv[])
 	i = -1;
 	while (argv[++i + 1])
 	{
-		if (!ft_strlen(argv[i + 1]))
-			ft_error();
 		if (!check_and_push(argv[i + 1], &stack_a))
-			ft_error();
+			ft_error(&stack_a, &stack_b);
 	}
 	if (is_sorted(stack_a))
 		exit(EXIT_SUCCESS);
 	algos(&stack_a, &stack_b);
+	ft_lstclear(&stack_a);
+	ft_lstclear(&stack_b);
 }

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebelkhei <ebelkhei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/05 14:29:30 by ebelkhei          #+#    #+#             */
-/*   Updated: 2023/01/27 12:04:38 by ebelkhei         ###   ########.fr       */
+/*   Created: 2023/01/27 15:25:55 by ebelkhei          #+#    #+#             */
+/*   Updated: 2023/01/27 15:44:05 by ebelkhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef PUSH_SWAP_BONUS_H
+# define PUSH_SWAP_BONUS_H
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -77,5 +77,9 @@ int			mouvments_num(int idx, int size);
 void		push_to_a(t_list **stack_b, t_list **stack_a, t_min *number);
 int			get_min_max(t_list *stack, int *min, int *max);
 void		push_to_a_2(t_list **stack_a, t_list **stack_b, int *count, int n);
+int			check_and_execute_instructions(char **instructions, t_list **stack_a,
+				t_list **stack_b);
+char		**read_from_si(void);
+void		check_stacks(t_list *stack_a, t_list *stack_b);
 
 #endif
